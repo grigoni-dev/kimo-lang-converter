@@ -1,0 +1,617 @@
+{
+   "APP_NAME":"Kimo b2b",
+   "MENU": {
+	   "ACCOUNT": "Client"
+   },
+   "AVAILABILITY":{
+      "LEAD_TIME_DAYS":"Délai {{ days }} jours"
+   },
+   "ACCOUNT_INFO":{
+      "TITLE":"Account Info"
+   },
+   "CART":{
+      "PACKS":"Confezioni",
+      "AMOUNT":"Totale marchandise",
+      "AMOUNT_GROUP":"{{ group }} panier",
+      "UNITS":"Unità per confezione",
+      "BUY":"Acheter",
+      "CART_HISTORY":"Historique du panier",
+      "CHANGE_RESPONSIBLE_FOR_TRANSPORT":"Changer le transporteur",
+      "CHANGE_SHIPMENT_SITE":"Changer la destination de la marchandise",
+      "CHECKOUT":"Acheter",
+      "CLEAR":"Vider le panier",
+      "CONFIRM_CLEAR":"Surs de vider le panier?",
+      "CONFIRM_CONFIRMATION":"Confirmer l'achat",
+      "CONFIRM_DELETE":"Surs d'éliminer le panier?",
+      "CONFIRM_END":"Acheter maintenant",
+      "CONFIRM_ORDER":"Confirmer la commande?",
+      "CONFIRM_START":"Confirmer l'achat",
+      "CONFIRMATION_ERROR_EMPTY":"Pas possible de confirmer un panier vide.",
+      "CONFIRMATION_ERROR_INVALID_DELIVERYDATE":"Pas possible de confirmer le panier: la date de livraison n'est pas valide",
+      "CONFIRMATION_ERROR_INVALID_QTY":"Pas possible de confirmer le panier: certains articles ne présentent pas de quantité valide (les articles ont été mis en évidence).",
+      "CONFIRMATION_ERROR_INVALID_QTY_LINE":"La quantité de cet article n'est pas valide. Mettre au jour ou supprimer.",
+      "CONFIRMATION_ERROR_ITEM_NOT_IN_B2B":"Pas possible de confirmer le panier: certains articles sont hors de gamme. Vérifier les articles dans la commande et éventuellement les supprimer (les articles qui ne sont pas valides ont été mis en évidence).",
+      "CONFIRMATION_ERROR_ITEM_NOT_IN_B2B_LINE":"Cet article n'est plus disponible: supprimer du panier.",
+      "CONFIRMATION_ERROR_ITEM_QTY_NOT_AVAILABLE":"Il n'est pas possible de confirmer le panier: certaines quantités ne sont pas disponibles. Vérifier les articles dans la commande (les articles qui ne sont pas valides ont été mis en évidence).",
+      "CONFIRMATION_ERROR_ITEM_QTY_NOT_AVAILABLE_LINE":"Certaines quantités de cet articles ne sont pas disponibles.",
+      "CONFIRMATION_ERROR_PRICE_OBSOLETE":"Pas possible de confirmer le panier: certains articles ont changé de prix. Confirmer l'acceptation du nouveau prix ou supprimer les articles (les articles à valider ont été mis en évidences).",
+      "CONFIRMATION_ERROR_PRICE_OBSOLETE_LINE":"Le nouveau prix de cet article est {{ newPrice }}.",
+      "CONFIRMATION_ERROR_REFRESH_NEEDED":"Les informations dans le panier ne sont pas au jour. Avant de confirmer, recharger le panier et vérifier si les informations sont correctes.",
+      "CONFIRMATION_ERROR_TRADEMARK_MIN_QTY":"Le modèle {{ trademark }} nécessite d'une quantité minimum de {{ minimum }}. Rajouter d'autres {{ needed }}.",
+      "CONFIRMATION_ERROR_INVALID_MIN_QTY":"Quantité minimum pas valide.",
+      "CONFIRMED":"Panier confirmé!",
+      "CREATE":"Nouveau panier",
+      "CREDIT_LIMIT_EXCEEDED_BY":"Attention, il n'est pas possible de confimer le panier parce qu'il depasse de {{ exceededAmount }} le budget disponible.",
+      "DELETE":"Supprimer",
+      "DELIVERY_DATE":"Date de livraison",
+      "DELIVERY_DATE_IN_THE_PAST_ERROR":"La date de livraison demandée ne peut pas être précedente à la date actuelle.",
+      "EMPTY_MESSAGE":"Panier vide",
+      "EXCEL_LOADER":{
+         "MENU":"Importer de Excel",
+         "NUMBER_OF_ITEMS_LOADED":"Numéro d'articles téléchargés:",
+         "RESULT_ERROR_TYPE":"Erreur",
+         "RESULT_ERRORS":{
+            "ITEM_ALREADY_IN_CART":"Article déjà saisi dans le panier.",
+            "ITEM_DUPLICATED_IN_SOURCE":"Article saisi plusieurs fois dans le fichier.",
+            "ITEM_NOT_FOUND":"Article pas valide.",
+            "ITEM_NOT_SPECIFIED":"Article pas spécifié.",
+            "QUANTITY_NOT_NUMERIC":"Quantité pas valide: la valeur indiquée n'est pas un numéro.",
+            "QUANTITY_NOT_VALID":"Quantité pas valide: saisir un muméro plus grand que zéro.",
+            "UOM_NOT_FOUND":"Unité de mesure de l'article pas valide. Contacter le service technique.",
+            "ITEM_MINQTY_FIXED":"La quantité de l'article a été modifiée à cause de la quantité minimum."
+         },
+         "RESULT_INSTRUCTION_ON_ERROR":"Il y a des fautes dans le fichier Excel. Il faut les corriger avant de procéder.",
+         "RESULT_INSTRUCTION_ON_WARNING":"Il y a des problèmes dans le fichier Excel, mais l'importation s'est terminée avec succès.",
+         "RESULT_ITEM":"Article",
+         "RESULT_LINE_NUMBER":"Ligne",
+         "RESULT_TITLE_ERROR":"Erreurs",
+         "RESULT_TITLE_WARNING":"Problematiques",
+         "TITLE":"Importation d'Excel",
+         "UPLOAD_FILE":"Charger le fichier",
+         "UPLOAD_SUCCEEDED":"Importation terminée!"
+      },
+      "ERROR_ITEM_NOT_IN_CURRENT_REASSORTMENT":"L'article n'est plus valide pour ce panier.",
+      "HEADER":{
+         "AMOUNT_INCLUDING_VAT":"Total panier",
+         "DELIVERY_DATE":"Date de livraison",
+         "DOCUMENT_REFERENCE":"Référence de la commande",
+         "NOTES":"Notes",
+         "SHIPMENT_SITE":"Destination de la marchandise",
+         "RESPONSIBLE_FOR_TRANSPORT":"Transporteur",
+         "SHIPPING_CHARGES":"Frais de port",
+         "TOTALS":"Totals",
+         "TOTAL_DOCUMENT":"Total",
+         "TOTAL_TAXABLE":"Total HT",
+         "VAT_AMOUNT":"TVA"
+      },
+      "INSERT_NAME":"Rajouter le nom du panier.",
+      "ITEM_LIST":"Liste des articles",
+      "ITEM_REMOVED":"L'article '{{ name }}' a été supprimé du panier.",
+      "ITEM_VARIABLE_REMOVED":"L'article '{{ name }}' a été supprimé du panier.",
+      "LINES":{
+         "ABORT_REMOVE":"Annuler",
+         "ACCEPT_NEW_PRICE":"Accepter le prix",
+         "AMOUNT":"Total",
+         "AVAILABILITY":"Disponibilité",
+         "AVAILABILITY_GLOBAL":"10 jours",
+         "AVAILABILITY_LOGISTIC":"5 jours",
+         "AVAILABILITY_WAREHOUSE":"Disponibilité stock",
+         "CODE":"Code",
+         "CONFIRM_REMOVE":"Sur de supprimer cette ligne?",
+         "DESCRIPTION":"Description",
+         "DISCOUNTS":"Remises%",
+         "ITEM":"Articles",
+         "ITEM_NOT_FOUND":"Article pas présent dans le registre",
+         "ITEM_NOT_IN_REASSORTMENT":"Article pas en réassort.",
+         "ITEM_INVALID_MIN_QTY":"La quantité minimum pour cet article n'est pas valide",
+         "NET_UNIT_PRICE":"Prix net",
+         "NEW_PRICE":"Nouveau prix",
+         "NOTES":"Notes",
+         "QUANTITY":"Quantité",
+         "REMOVE":"Supprimer",
+         "SAVE_NEW_QTY":"Enregistrer",
+         "UNDO_NEW_QTY":"Réétablir",
+         "UNIT_OF_MEASURE":"UM",
+         "UNIT_PRICE":"Prix"
+      },
+      "WARNING":{
+         "CONFIRM_CART":"IMPOSSIBLE DE CONFIRMER LA COMMANDE: CONTACTER ADMINISTRAZIONE LOCATELLI SPA"
+      },
+      "MORE_INFO":"Plus d'infos",
+      "NOTES":"Notes:",
+      "ORDER_SUMMARY":"Ci-dessous le compte-rendu de ta commande.",
+      "RENAME":"Renommer",
+      "RESPONSIBLE_FOR_TRANSPORT":"Transporteur",
+      "RESPONSIBLE_FOR_TRANSPORT_NOT_SELECTED":"Transporteur pas sélectionné",
+      "SAVED":"Panier enregistré!",
+      "SHIPMENT_ADDRESS":"Adresse de livraison",
+      "SHIPMENT_SITE_NOT_SELECTED":"Destination de la marchandise pas sélectionnée.",
+      "SHOW_LINES":"Montrer les articles",
+      "SHOW_MORE_INFO":"Montrer plus d'infos",
+      "TITLE":"Détails du panier",
+      "WARNING_UNAVAILABLE_ITEM_QUANTITY":"{{ count }} sur {{ total }} ne sont pas disponibles dans l'immédiat mais ils seront réservés",
+      "WARNING_UNAVAILABLE_ITEM_QUANTITY_DAYS":"{{ count }} sur {{ total }} seront disponibles dans {{ days }} jours. Ils seront réservés",
+      "WARNING_UNAVAILABLE_ITEMS":"Il y a {{ count }} articles qui seront réservés",
+      "WARNING_UNAVAILABLE_ITEMS_CONFIRM":"Cette quantité n'est pas disponible au moment, réserver également?",
+      "WARNING_UNAVAILABLE_ITEMS_CONFIRM_YES":"Oui, réserver",
+      "YOUR_CART_CONTAINS":"Ton panier présente",
+	  "TABLE": {
+		  "HEADERS": {
+			  "UNITS_PER_PACK": "Unite per Pack"
+		  }
+	  }
+   },
+   "CART_HISTORY":{
+      "CART":{
+         "AMOUNT":"Totale",
+         "DETAILS":"Détails",
+         "LINES":{
+            "AMOUNT":"Totale ligne",
+            "DESCRIPTION":"Description",
+            "DISCOUNTS":"Remises%",
+            "ITEM_CODE":"Articles",
+            "QUANTITY":"Quantité",
+            "TITLE":"Lignes",
+            "UNIT_PRICE":"Prix untaire"
+         },
+         "TITLE":"Panier",
+         "USER_FULLNAME":"Créé par"
+      },
+      "LIST":{
+         "CONFIRMATION_DATE":"Confirmé le",
+         "CREATION_DATE":"le",
+         "LINES_COUNT":"Numéro de lignes",
+         "LIST":"Liste paniers",
+         "NOTES":"Notes",
+         "ORDER_REFERENCE":"Réf. Commande",
+         "ORDER_TOTAL":"Totale commande",
+         "TITLE":"Historique du panier",
+         "USER_FULLNAME":"Créé par"
+      }
+   },
+   "CATALOG":{
+      "ADVANCED_SEARCH":"Recherche avancée",
+      "AVAILABILITY":"Disponibilité",
+      "AVAILABILITY_BY":"{{ quantity }} seront disponibles le {{ date }}",
+      "AVAILABILITY_BY_SINGULAR":"{{ quantity }} sera disponible le {{ date }}",
+      "AVAILABILITY_BY_SHORT":"{{ quantity }} le {{ date }}",
+      "AVAILABILITY_NOW":"{{ quantity }} disponible au moment",
+      "AVAILABILITY_NOW_SINGULAR":"{{ quantity }} disponibles au moment",
+      "COLLECTION":"Collection",
+      "COLOR":"Couleur",
+      "FILTERS":"Filtres",
+      "FREE_BOOLEAN_3":"Booleano libero 3",
+      "FREE_LOOKUP_1":"FreeLookup 1",
+      "FREE_LOOKUP_2":"FreeLookup 2",
+      "FREE_LOOKUP_3":"FreeLookup 3",
+      "BARCODES":"Code-barres",
+      "HELP":{
+         "SELECT_QUANTITY":"Sélectionner la quantité",
+         "SELECT_VARIABLE1":"Sélectionner la couleur",
+         "SELECT_VARIABLE2":"Sélectionner la taille",
+         "SAVE_TO_CART":"Enregistrer {{ quantity }} dans le panier"
+      },
+      "ITEM_CATEGORY":"Catégorie",
+      "ITEM_GROUP_1":"Macro catégorie:",
+      "ITEM_GROUP_2":"Catégorie",
+      "ITEM_GROUP_3":"Groupe 3",
+      "ITEM_GROUP_4":"Groupe 4",
+      "LINES":{
+         "ADD_TO_CART":"Rajouter",
+         "AVAILABILITY_GLOBAL":"10 jours",
+         "AVAILABILITY_LOGISTIC":"5 jours",
+         "AVAILABILITY_WAREHOUSE":"Disponibilité stock",
+         "FREE_TEXT_1":"Campo testo libero 1",
+         "BACK_TO_SEARCH":"Arrière",
+         "CODE":"Codice",
+         "DESCRIPTION":"Description",
+         "DISCOUNTS":"Remises%",
+         "FREE_DECIMAL_1":"Campo numerico libero 1",
+         "FREE_DECIMAL_2":"Campo numerico libero 2",
+         "FREE_DECIMAL_3":"Campo numerico libero 3",
+         "FREE_TEXT_2":"Campo testo libero 2",
+         "FREE_TEXT_3":"Campo testo libero 3",
+         "ITEM_DETAIL":"Détails techniques",
+         "LONG_DESCRIPTION":"Notes techniques",
+         "MANUFACTURER_ID":"Id producteur",
+         "MANUFACTURER_ITEM_ID":"Id article fournisseur",
+         "MANUFACTURER_NAME":"Nom producteur",
+         "NET_UNIT_PRICE":"Prix net",
+         "NOTES":"Notes",
+         "PRICE":"Prix",
+         "QTYS_IN_CART":"Quantité dans le panier",
+         "QUANTITY":"Quantité",
+         "RETAIL_PRICE":"Prix TTC",
+         "WHOLESALE_PRICE":"Prix grossiste",
+         "SAVE_TO_CART":"Enregistrer",
+         "TITLE":"CATALOGUE",
+         "TRADEMARK":"Marque",
+         "UNITS_PER_PACK":"Quantité par emballage",
+         "NUMBER_OF_PACKS":"Numero di confezioni",
+         "SALES_QTY":"Quantité de vente"
+      },
+      "MANUFACTURER":"Producteur",
+      "MANUFACTURER_CODE":"Code producteur",
+      "MANUFACTURER_ITEM_ID":"Id article producteur",
+      "RETAIL_PRICE":"Prix TTC",
+      "WHOLESALE_PRICE":"Prix grossiste",
+      "SEARCH":"Rechercher...",
+      "SEASON":"Saison",
+      "SHIPPING_TIME":"Délai de livraison",
+      "TITLE":"Catalogue",
+      "TRADEMARK":"Marque",
+      "UNIT_PRICE":"Prix",
+      "UNITS_PER_PACK":"emballage par {{units}}",
+      "VARIABLE1":"Couleur",
+      "VARIABLE2":"Taille"
+   },
+   "CHANGE_PASSWORD":{
+      "CHANGED":"Mot de passe modifié!",
+      "CONFIRM_PASSWORD":"Confirmer le mot de passe",
+      "NEW_PASSWORD":"Nuoveau mot de passe",
+      "OLD_PASSWORD":"Ancien mot de passe",
+      "TITLE":"Changer le mot de passe"
+   },
+   "COMMUNICATIONS":{
+      "PUBLISHED":"Publié",
+      "PUBLISHED_BY":"par",
+      "PUBLISHED_IN":"dans",
+      "PUBLISHED_ON":"le",
+      "TITLE":"Communication"
+   },
+   "COMPANY_DOCUMENTS":{
+      "DATE":"Dernière modification",
+      "NAME":"Nom",
+      "SIZE":"Dimension",
+      "TITLE":"Documents de l'usine"
+   },
+   "ERP_DOCUMENTS":{
+      "AMOUNT":"Montant HT",
+      "AMOUNT_INCLUDING_VAT":"Montant TTC",
+      "DATE":"Date",
+      "FROM":"Du",
+      "LINES":{
+         "AMOUNT":"Montant HT",
+         "AMOUNT_INCLUDING_VAT":"Montant TTC",
+         "DESCRIPTION":"Description",
+         "DISCOUNT":"Remise",
+         "FREE_DATETIME_1":"Free DateTime 1",
+         "ITEM_CODE":"Article",
+         "LOADING":"Téléchargement...",
+         "NO_DOC_SELECTED_MESSAGE":"Sélectionner un document afin de visualiser les détails",
+         "PRICE":"Prix",
+         "QUANTITY":"Quantité",
+         "TITLE":"Détails"
+      },
+      "LIST":"Liste de documents",
+      "NUMBER":"Numéro",
+      "TITLE":"Historique de documents",
+      "TO":"Au",
+      "TYPE":"Type"
+   },
+   "ERROR":{
+      "BARCODE_NOT_FOUND":"L'article avec ce code n'a pas été trouvé",
+      "INVALID_QTY":"La quantité n'est pas valide.",
+      "NO_NETWORK":"Pas de connexion au server, vérifier la connexion.",
+      "PASSWORD_IS_EMPTY":"Le mot de passe ne peut pas être vide.",
+      "PASSWORD_MISMATCH":"Les mots de passe ne correspondent pas.",
+      "QTY_NOT_AVAILABLE":"Cette quantité n'est pas disponible.",
+      "REFRESH_NEEDED":"Les informations ne sont pas au jour. Il faut mettre au jour.",
+      "SEARCH_FAILED":"La recherche ne marche pas, vérifier la connexion.",
+      "SELECT_FILE":"Sélectionner un fichier",
+      "SHIPMENTSITE_REQUIRED":"La destination de la marchandise ne peut pas être vide",
+      "TITLE":"Erreur",
+      "TOO_MANY_ITEMS":"Il y a trop d'articles avec ce critère.",
+      "UNEXPECTED_RESPONSE":"Il y a un problème de connexion au server, contacter le support technique.",
+      "VIEW_NOT_FOUND":"Il n'est pas possible d'ouvrir la page.",
+      "PASSWORD_EXPIRED":"Le mot de passe a expiré, il faut le changer.",
+      "WRONG_PASSWORD":"Mot de passe erroné.",
+      "INVALID_MINQTY":"Quantité minimum pas valide."
+   },
+   "FORGOT_PASSWORD":{
+      "EMAIL_SENT":"E-Mail envoyé à l'adresse {{emailAddress}}",
+      "EMAIL_NOT_SENT":"L'envoi de l'e-mail nécessaire pour effectuer la réinitialisation du mot de passe n'a pas réussi",
+      "REQUEST":"Demande",
+      "TITLE":"Mot de passe oublié",
+      "USER_ID_FIELD_LABEL":"Taper login ou adresse email pour demander la réinitialisation du mot de passe ",
+      "GLOBAL":{
+         "APPLY":"Appliquer",
+         "CANCEL":"Annuler",
+         "CONFIRM":"Confirmer",
+         "CLOSE":"Fermer",
+         "DATEPICKER_PLACEHOLDER":"Sélectionner une date...",
+         "GREETINGS":"Bonjour",
+         "INFO":"Information",
+         "NO":"Non",
+         "OK":"OK",
+         "RESET":"Réinitialisation",
+         "SAVE":"Enregistrer",
+         "TODAY":"Aujourd'hui",
+         "WARNING":"Attention",
+         "YES":"Oui"
+      }
+   },
+   "HOME":{
+      "TITLE":"Home"
+   },
+   "INSTALLMENTS":{
+      "AMOUNT":"Montant",
+      "DATE":"Date",
+      "DAYS_SINCE_EXPIRATION":"Expiré depuis (gg)",
+      "INSTALLMENTS_LIST":"Liste des échéances",
+      "NOTES":"Notes",
+      "PAID_AMOUNT":"Payé",
+      "PAYMENT_TYPE_ID":"Règlement",
+      "PAYMENT_TYPE_DESCRIPTION":"Description du règlement",
+      "RECEIVABLE_DATE":"Date de facture",
+      "RECEIVABLE_NUMBER":"Facture",
+      "SOURCE_DOCUMENT_NUMBER":"Document",
+      "STATUS":"Etat",
+      "TITLE":"Echéanche"
+   },
+   "ITEM":{
+      "UNITS_PER_PACK":"Quantité par emballage",
+      "ITEM_ATTACHMENTS_TITLE":"Pièce jointe"
+   },
+	  "ITEM_FORM":{
+		"TOTAL_AMOUNT": "TOTALE",
+		"UNIT_PRICE": "Prezzo",
+		"DISCOUNT": "sconto",
+		"NET_UNIT_PRICE": "Prezzo netto",
+		"DOCUMENT_NUMBER": "N° documento",
+		"DOCUMENT_TYPE": "Tipo documento",
+		"DOCUMENT_DATE": "Del",
+		"DOCUMENT_LINE_SALES_QTY": "Quantité",
+		"DOCUMENT_LINE_NET_UNIT_PRICE": "Prezzo netto",
+		"DOCUMENT_LINE_AMOUNT": "Totale",
+		"PURCHASED_BY_ITEM":{
+			"EMPTY":"Nessun articolo"
+		},
+		"PURCHASED_BY_ITEM":"Acquisto per articolo"
+	},
+   "LOGIN":{
+      "ACCOUNT":"Account",
+      "CONFIRMATION_LOGOUT":"Sur de retourner à la page du login?",
+      "ENABLE_FINGERPRINT_LOGIN":"Permettre l'accès à l'utilisateur en utilisant l'empreinte digitale?",
+      "ENABLE_TOUCHID_LOGIN":"Permettre l'accès à l'utilisateur en utilisant Touch ID?",
+      "ENABLE_FACEID_LOGIN":"Permettre l'accès à l'utilisateur en utilisant Face ID?",
+      "FORGOT_PASSWORD":"Mot de passe oublié?",
+      "LOGIN_WITH_FACEID_MESSAGE":"Accéder avec Face ID",
+      "LOGIN_WITH_FINGERPRINT_MESSAGE":"Accéder avec ton empreinte digitale",
+      "LOGIN_WITH_TOUCHID_MESSAGE":"Accéder avec Touch ID",
+      "PASSWORD":"Mot de passe",
+      "REMEMBER_ME":"Rester en ligne",
+      "SUBMIT_DATA":"Accéder",
+      "TITLE":"Login",
+      "UPDATE_AVAILABLE":"Dans le Store la version {{storeVersion}} a été publiée, mettre au jour dès que possible",
+      "USERNAME":"Nom utilisateur",
+      "WRONG_DATA":"Accès refusé. Identifiant ou mot de passe erroné."
+   },
+   "NAVBAR":{
+      "ACCOUNTING_INFO":"Situation comptable",
+      "CATALOG":"Catalogue",
+      "CHANGE_PASSWORD":"Changer mot de passe",
+      "COMMUNICATIONS":"Communications",
+      "CONTENTS":"Contenu",
+      "COMPANY_DOCUMENTS":"Documents de l'usine",
+      "ERP_DOCUMENTS":"Historique des documents",
+      "INSTALLMENTS":"Echéances",
+      "LOGOUT":"Sortir",
+      "PROMOTIONS":"Promotions"
+   },
+   "PAYMENT_STATUS":{
+      "PAID":"Payé",
+      "PAID_ON_KIMO":"Payé dans kimo",
+      "TO_BE_PAID":"A payer",
+      "UNPAID":"Impayés"
+   },
+   "PRICE":{
+      "WHEN_ZERO":"Si zéro",
+      "UNIT_PRICE":"Unit price",
+      "NET_UNIT_PRICE":"Net unit price"
+   },
+   "PROMOTIONS":{
+      "CODE":"Code",
+      "COMPLEX_PROMOTON_ALERT":"Promotion en cours: contacter l'usine pour plus d'informations",
+      "DESCRIPTION":"Description",
+      "ITEM_IN_PROMOTION":"Article en promotion",
+      "MAX_QTY":"max.",
+      "MIN_QTY":"min.",
+      "TITLE":"Promotions en cours de validité",
+      "VALIDITY":"Validité"
+   },
+   "ACCOUNTING_INFO":{
+      "NOT_AVAILABLE":"N.D.",
+      "TITLE":"Situation comptable",
+      "KEYS":{
+         "CreditLimitGrantedAmount":"Montant limite de crédit accordé",
+         "CreditLimitOverAmount":"Hors de limite de crédit",
+         "CreditLimitResidualAmount":"Montant limite de crédit en reliquat",
+         "CreditLimitTemporaryAmount":"Limite de crédit temporaire",
+         "CreditLimitTemporaryAmountExpiryDate":"Echeance limite de crédit temporaire",
+         "CreditLimitUsedAmount":"Montant limite de crédit utilisé",
+         "CustomerBalanceAmount":"Solde comptable",
+         "ExposureAmount":"Exposition",
+         "FreeBoolean1":"Campo booleano libero 1",
+         "FreeBoolean2":"Campo booleano libero 2",
+         "FreeBoolean3":"Campo booleano libero 3",
+         "FreeBoolean4":"Campo booleano libero 4",
+         "FreeBoolean5":"Campo booleano libero 5",
+         "FreeDecimal1":"Campo numerico libero 1",
+         "FreeDecimal2":"Campo numerico libero 2",
+         "FreeDecimal3":"Campo numerico libero 3",
+         "FreeDecimal4":"Campo numerico libero 4",
+         "FreeDecimal5":"Campo numerico libero 5",
+         "FreeText1":"Campo testo libero 1",
+         "FreeText2":"Campo testo libero 2",
+         "FreeText3":"Campo testo libero 3",
+         "InvoicesAmount":"Chiffre d'affaires année en cours",
+         "InvoicesNotRecordedAmount":"Montant bons de livraison non facturés",
+         "InvoicesPastAmount":"Chiffre d'affaires année précédente",
+         "LastUpdateDate":"Date dernière mise au jour",
+         "Notes":"Notes",
+         "SalesOrdersDeliveredAmount":"Totale marchandise livrée",
+         "SalesOrdersNotShippedAmount":"Totale marchandise non livrée",
+         "SalesOrdersWithExpiredShipmentTermsAmount":"Totale avec date de livraison expirée",
+         "SalesOrdersWithExpiringShipmentTermsAmount":"Totale avec date de livraison en échéance",
+         "UnpaidsAmount":"Montant impayés",
+         "UnpaidsNumber":"Impayés année en cours",
+         "UnpaidsPastNumber":"Impayés année précédente"
+      }
+   },
+   "SUCCESS":{
+      "ITEM_ADDED_TO_CART":"Article {{itemId}} rajouté correctement.",
+      "TITLE":"Succès"
+   },
+   "WARNING":{
+      "ITEMGROUP1_NOT_SELECTED":"Aucune valeur a été selectionnée pour {{itemGroup1}}",
+      "UNEXISTING_ITEM_CANNOT_BE_ORDERED":"Cet article a été supprimé et il ne peut plus être commandé."
+   },
+   "REASSORTMENT":{
+      "FILTERS":"Filtres",
+      "ITEM_GROUP_1":"Macro catégorie:",
+      "ITEM_GROUP_2":"Catégorie",
+      "LAST_SALE_DATE":"Date de la dernière vente",
+      "LAST_SALE_UNIT_PRICE":"Prix de la dernière vente",
+      "LAST_SALE_DISCOUNT":"Remise %",
+      "ReassortmentType_1":{
+         "TITLE":"Consumation",
+         "LINES":{
+            "AVAILABILITY_WAREHOUSE":"Disponibilité",
+            "AVAILABILITY_LOGISTIC":"5 jours",
+            "AVAILABILITY_GLOBAL":"10 jours",
+            "DOCUMENT_DELIVERY_DATE":"Date de livraison",
+            "DOCUMENT_NET_UNIT_PRICE":"Prix net",
+            "DOCUMENT_NUMBER_OF_PACKS_WITH_UOM":"Emballage",
+            "DOCUMENT_SALES_QTY_WITH_UOM":"Quantité en commande",
+            "DOCUMENT_TOTAL_PRICE":"Prix total",
+            "FREE_DECIMAL_1":"prezzo netto",
+            "LAST_SALE_SALES_QTY":"Reliquat",
+            "LAST_SALE_DATE":"Date de la dernière vente",
+            "LAST_SALE_UNIT_PRICE":"Prix de la dernière vente",
+            "LAST_SALE_DISCOUNT":"Remise %",
+            "LAST_SALE_NET_UNIT_PRICE":"prezzo netto",
+            "LINE_ERP_STATUS_ID_1":"",
+            "FREEQTY1_SALES_QTY":"Quantité - YTD",
+            "FREEQTY2_SALES_QTY":"Quantité - PYTD",
+            "FREEQTY3_SALES_QTY":"Quantité - LY",
+            "FREEQTY4_SALES_QTY":"Quantité - dernière vente (CT)",
+            "FREEQTY5_SALES_QTY":"Gratuité (CT)",
+            "PRICE":"Prix",
+            "DISCOUNTS":"Remise %",
+            "NET_UNIT_PRICE":"Prix net"
+         }
+      },
+      "ReassortmentType_2":{
+         "TITLE":"Back order",
+         "LINES":{
+            "CURRENT_UNIT_PRICE":"Prix de vente",
+            "CURRENT_DISCOUNT":"Remise %",
+            "DOCUMENT_DELIVERY_DATE":"Date de livraison",
+            "DOCUMENT_NET_UNIT_PRICE":"Prix net",
+            "DOCUMENT_NUMBER_OF_PACKS_WITH_UOM":"Emballage",
+            "DOCUMENT_SALES_QTY_WITH_UOM":"Quantité dans la commande",
+            "DOCUMENT_TOTAL_PRICE":"Prix total",
+            "FREE_DECIMAL_1":"prezzo netto",
+            "FREE_DECIMAL_3":"rimanente",
+            "FREE_TEXT_2":"nr ordine",
+            "FREE_TEXT_3":"riga ordine",
+            "FREEQTY1_SALES_QTY":"Quantité réservée",
+            "FREEQTY3_SALES_QTY":"Quantité",
+            "FREEQTY3_NUMBER_PURCHASES":"Nombre de commandes",
+            "LAST_SALE_NET_UNIT_PRICE":"prezzo netto",
+            "LAST_SALE_SALES_QTY":"Reliquat",
+            "LAST_SALE_DATE":"Date de la dernière vente",
+            "LAST_SALE_UNIT_PRICE":"Prix de la dernière vente",
+            "LAST_SALE_DISCOUNT":"Remise%",
+            "LINE_ERP_STATUS_2":"+",
+            "NOTES":"Promo",
+            "TOTAL_OUTSTANDING_QTY":"qta rimanente",
+            "TOTAL_SALES_QTY":"qta ordinata",
+            "TOTAL_SHIPPED_QTY":"qta consegnata",
+            "AVAILABILITY_WAREHOUSE":"Disponibilité",
+            "AVAILABILITY_LOGISTIC":"5 jours",
+            "AVAILABILITY_GLOBAL":"10 jours"
+         }
+      },
+      "SEARCH":"Recherche..."
+   },
+   "SECTIONS":{
+      "ON":{
+         "TITLE":"ON",
+         "ITEMS":{
+            "FULL_FACE":"Full Face",
+            "FLIP-UP":"Flip-Up",
+            "MODULAR_LINE":"Modular Line",
+            "ON-OFF":"ON-OFF",
+            "URBAN_JET":"Urban Jet",
+            "SPARE":"Ricambi"
+         }
+      },
+      "NEWS":{
+         "TITLE":"News",
+         "ITEMS":{
+            "AVIATOR3":"Aviator 3"
+         }
+      },
+      "OFF":{
+         "TITLE":"OFF",
+         "ITEMS":{
+            "AVIATOR_2_3_AMS":"Aviator 2.3 AMS²",
+            "AVIATOR_ACE":"Aviator ACE",
+            "TERMINATOR_OPEN_VISION":"Terminator Open Vision",
+            "TWIST":"Twist 2.0",
+            "WRAAP":"Wraap",
+            "SPARE":"Ricambi"
+         }
+      },
+      "JUNIOR":{
+         "TITLE":"JUNIOR",
+         "ITEMS":{
+            "AVIATOR_J":"Aviator J",
+            "ARCHER":"Archer",
+            "WRAAPYOUTH":"WRAAP YOUTH",
+            "MRJET":"MRJET"
+         }
+      },
+      "ONROAD":{
+         "TITLE":"ON ROAD",
+         "ITEMS":{
+            "FULLFACE":"FULL FACE",
+            "GP5505":"GP 550 S",
+            "ST501":"ST.501",
+            "SPARK":"SPARK",
+            "VALOR":"VALOR",
+            "FLIPUP":"FLIP UP",
+            "REV19":"REV19",
+            "PHANTS":"PHANTOM S",
+            "ONOFF":"ON OFF",
+            "COMMAN":"COMMANDER",
+            "URBANJET":"URBAN JET",
+            "TRRS":"TRR S",
+            "H20":"H.20",
+            "HELIOS":"HELIOS",
+            "SPECKTRE":"SPECKTRE",
+            "MATHISSE":"MATHISSE"
+         }
+      },
+      "OFFROAD":{
+         "TITLE":"OFF ROAD",
+         "ITEMS":{
+            "AVIATOR3":"AVIATOR 3",
+            "AVIATORACE":"AVIATOR ACE",
+            "STRYCKER":"STRYCKER",
+            "TWIST20":"TWIST 2.0",
+            "WRAAP":"WRAAP"
+         }
+      },
+      "SPECIALLINE":{
+         "TITLE":"SPECIAL LINE",
+         "ITEMS":{
+            "EXECUTIVE":"EXECUTIVE",
+            "J106":"J106",
+            "JT":"JT"
+         }
+      }
+   }
+}
