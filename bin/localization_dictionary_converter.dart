@@ -1,25 +1,28 @@
+import 'dart:collection';
 import 'dart:io';
 
 import 'assets/it.dart';
 
 class LocalizationDictionaryConverter {
-  final Map<String, dynamic> source;
-  final String sourceFilename;
-  final String lang;
-
-  LocalizationDictionaryConverter({required this.source, required this.sourceFilename, required this.lang});
-
-  void converter() {
-    final tmp = "converted-to-flat";
-    Map<String, String> result = {};
-    _fromServerToClientMapping(source, result, "");
-    _createNewFile(result, tmp, lang, "dart");
-    addMissingKeysFromTemplate(kimoLocaleIT, result);
-    _createNewFile(result, lang.toLowerCase(), lang.toUpperCase(), "json");
-    _removeFile(tmp);
+  static void converterCompareAndUpdate(Map<String, dynamic> source, String sourceFilename, String lang) {
+    final result = SplayTreeMap<String, String>((a, b) => a.compareTo(b));
+    final template = kimoLocaleIT;
+    convertAndCreate(source, result, lang);
+    compareAndUpdate(template, result, lang);
+    // _removeFile(tmp);
   }
 
-  void _fromServerToClientMapping(Map<String, dynamic> source, Map<String, String> result, String parentKey) {
+  static void convertAndCreate(Map<String, dynamic> source, Map<String, String> result, String lang) {
+    _fromServerToClientMapping(source, result, "");
+    _createNewFile(result, lang, "dart");
+  }
+
+  static void compareAndUpdate(Map<String, String> templateMap, Map<String, String> importedMap, String lang) {
+    addMissingKeysFromTemplate(templateMap, importedMap);
+    _createNewFile(importedMap, lang, "json");
+  }
+
+  static void _fromServerToClientMapping(Map<String, dynamic> source, Map<String, String> result, String parentKey) {
     source.forEach(
       (key, value) {
         if (value is String) {
@@ -33,15 +36,19 @@ class LocalizationDictionaryConverter {
     );
   }
 
-  void addMissingKeysFromTemplate(Map<String, String> templateMap, Map<String, String> importedMap) {
+  static void addMissingKeysFromTemplate(Map<String, String> templateMap, Map<String, String> importedMap) {
     for (final templateEntry in templateMap.entries) {
       importedMap.putIfAbsent(templateEntry.key, () => templateEntry.value.replaceAll("\n", "\\n"));
     }
   }
 
-  void _createNewFile(Map<String, String> map, String filename, String lang, String extension) async {
+  static void _createNewFile(Map<String, String> map, String filename, String extension) async {
     StringBuffer sb = StringBuffer();
-    // sb.writeln("Map<String, String> kimoLocale$lang = {");
+
+    if (extension.contains('dart')) {
+      sb.writeln("Map<String, String> kimoLocale${filename.toUpperCase()} = {");
+    }
+
     sb.writeln("{");
     map.forEach((key, value) {
       sb.writeln("   \"$key\" : \"$value\",");
@@ -49,12 +56,17 @@ class LocalizationDictionaryConverter {
 
     String finalValue = sb.toString();
     finalValue = finalValue.replaceRange(finalValue.length - 2, finalValue.length - 1, "\n}");
-    final file = File('bin/assets/$filename.$extension');
+
+    if (extension.contains('dart')) {
+      sb.writeln(";");
+    }
+
+    final file = File('bin/assets/${filename.toLowerCase()}.$extension');
     await file.writeAsString(finalValue);
   }
 
-  void _removeFile(String filenameToRemove) {
-    final file = File('bin/assets/$filenameToRemove.dart');
+  void _removeFile(String filename) {
+    final file = File('bin/assets/${filename.toLowerCase()}.dart');
     file.delete();
   }
 }
